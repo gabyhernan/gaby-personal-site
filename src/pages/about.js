@@ -1,8 +1,12 @@
 import React from "react"
+import { Link } from "gatsby"
+import Header from "./components/header"
+import Footer from "./components/footer"
 
 const AboutPage = () => {
   return (
     <div>
+      <Header />
       <h1> About Gaby</h1>
       <h2>
         {" "}
@@ -12,6 +16,13 @@ const AboutPage = () => {
         internal roles and have thrived and enjoyed working in various
         industries.
       </h2>
+
+      <p>
+        {" "}
+        For inquiries please
+        <Link to="/contact"> contact me </Link>
+      </p>
+      <Footer />
     </div>
   )
 }
