@@ -1,16 +1,69 @@
 import React from "react"
 import { Link } from "gatsby"
+import headerStyles from "./header.module.scss"
 
 const Header = () => {
   return (
-    <header>
-      <h1> Gaby Hernandez logo </h1>
+    <header className={headerStyles.header}>
+      <h1 className={headerStyles.title}> Gaby Hernandez logo </h1>
       <nav>
-        <Link to="/"> Home </Link>
-        <Link to="/about"> About </Link>
-        <Link to="/projects"> Projects </Link>
-        <Link to="/blog"> Blog </Link>
-        <Link to="/contact"> Contact</Link>
+        <ul className={headerStyles.navList}>
+          <li>
+            {" "}
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/"
+            >
+              {" "}
+              Home{" "}
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/about"
+            >
+              {" "}
+              About{" "}
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/projects"
+            >
+              {" "}
+              Projects{" "}
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/blog"
+            >
+              {" "}
+              Blog{" "}
+            </Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/contact"
+            >
+              {" "}
+              Contact
+            </Link>{" "}
+          </li>
+        </ul>
       </nav>
     </header>
   )
