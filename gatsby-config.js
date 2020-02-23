@@ -9,5 +9,15 @@ module.exports = {
     title: "Gaby Hernandez Lebron",
     author: "Gaby Hernandez Lebron",
   },
-  plugins: [`gatsby-plugin-sass`],
+  plugins: [
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "src",
+        path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-transformer-remark`,
+  ],
 }
