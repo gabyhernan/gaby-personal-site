@@ -5,6 +5,8 @@ date: "2020-02-21"
 
 I am working on my new website
 
+![Smiling dog](./dog-image.png)
+
 ## The stack is
 
 1. Gatsby
