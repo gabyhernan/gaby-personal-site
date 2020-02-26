@@ -3,10 +3,12 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import Head from "../components/head"
 
 const IndexPage = () => {
   return (
     <Layout>
+      <Head title="Home" />
       <h1> Hi. </h1>
       <h2>
         {" "}

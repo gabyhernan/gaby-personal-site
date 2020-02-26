@@ -10,6 +10,7 @@ module.exports = {
     author: "Gaby Hernandez Lebron",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
