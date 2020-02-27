@@ -4,10 +4,24 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   // 1. Get Path to template
   const blogTemplate = path.resolve("./src/templates/blog.js")
+  const projectTemplate = path.resolve("./src/templates/project.js")
   // 2. Get markdown data
   const res = await graphql(`
     query {
       allContentfulBlogPost {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  // 2. Get markdown data
+  const projectRes = await graphql(`
+    query {
+      allContentfulProject {
         edges {
           node {
             slug
@@ -27,27 +41,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-}
 
-// Grabs Project Template
-module.exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  // 1. Get Path to template
-  const projectTemplate = path.resolve("./src/templates/project.js")
-  // 2. Get markdown data
-  const res = await graphql(`
-    query {
-      allContentfulProject {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
-    }
-  `)
-
-  res.data.allContentfulProject.edges.forEach(edge => {
+  projectRes.data.allContentfulProject.edges.forEach(edge => {
     createPage({
       component: projectTemplate,
       path: `/projects/${edge.node.slug}`,
@@ -58,3 +53,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+// // Grabs Project Template
+// module.exports.createPages = async ({ graphql, actions }) => {
+//   const { createPage } = actions
+//   // 1. Get Path to template
+// }

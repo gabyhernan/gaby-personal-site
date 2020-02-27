@@ -14,11 +14,6 @@ const IndexPage = () => {
         Hi. I'm Gaby, a Front End Engineer based in NYC.{" "}
       </h1>
       <h2 className={indexStyles.subHeader}> I have a dog named Oprah</h2>
-      <p>
-        {" "}
-        Need a developer?
-        <Link to="/contact">contact me</Link>
-      </p>
     </Layout>
   )
   return (
