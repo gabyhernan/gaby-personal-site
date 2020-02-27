@@ -48,7 +48,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
   `)
 
   res.data.allContentfulProject.edges.forEach(edge => {
-    console.log("coming from contentful i think", edge)
     createPage({
       component: projectTemplate,
       path: `/projects/${edge.node.slug}`,
