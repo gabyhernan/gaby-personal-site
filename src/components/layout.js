@@ -5,7 +5,7 @@ import "../styles/index.scss"
 import layoutStyles from "./layout.module.scss"
 const Layout = props => {
   return (
-    <div className={layoutStyles.container}>
+    <div className={props.fullWidth ? layoutStyles.fullWidth : layoutStyles.container}>
       <div className={layoutStyles.content}>
         <Header />
         <p> {props.children} </p>

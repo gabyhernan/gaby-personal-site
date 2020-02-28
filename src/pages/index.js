@@ -5,14 +5,13 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import Head from "../components/head"
 import indexStyles from "./index.module.scss"
+import ProjectsPage from "./projects"
 
 const IndexPage = () => {
   return (
     <Layout>
       <Head title="Home" />
-      <h1 className={indexStyles.header}>
-        Hi. I'm Gaby, a Front End Engineer based in NYC.{" "}
-      </h1>
+      <h1 className={indexStyles.header}>Hi. I'm Gaby, a Front End Engineer based in NYC. </h1>
       <h2 className={indexStyles.subHeader}> I have a dog named Oprah</h2>
     </Layout>
   )
@@ -20,10 +19,7 @@ const IndexPage = () => {
     <div>
       <Header />
       <h1> Hi. </h1>
-      <h2>
-        {" "}
-        Im Gaby, a Front End Engineer based in quiet and very clean NYC.{" "}
-      </h2>
+      <h2> Im Gaby, a Front End Engineer based in quiet and very clean NYC. </h2>
       <p>
         {" "}
         Need a developer?
