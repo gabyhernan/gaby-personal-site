@@ -6,11 +6,11 @@ import Head from "../components/head"
 const ProjectsPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulProject {
+      allContentfulProject(sort: { fields: displayOrder, order: ASC }) {
         edges {
           node {
-            projectTitle
             slug
+            projectTitle
           }
         }
       }
