@@ -1,0 +1,110 @@
+.small-grid {
+  width: 100%;
+  max-width: $sml-grid-width;
+  margin: 0 auto;
+  display: flex;
+}
+
+.xl-grid {
+  width: 100%;
+  max-width: $xl-grid-width;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  padding: 0 30px;
+}
+
+[class*="col-"],
+.col {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+$gap: 30px; // space between columnd
+$gutter: $gap / 2;
+
+@include media-query($small-down) {
+  .col.no-pad {
+    margin-bottom: 0;
+  }
+}
+
+// Grid system for screen larger than 800px
+@include media-query($medium-up) {
+  .row {
+    display: flex;
+    width: calc(100% + #{$gap});
+    margin-left: -$gutter;
+    flex-wrap: wrap;
+  }
+
+  [class*="col-"],
+  .col {
+    padding: 0 $gutter;
+    margin-bottom: 0;
+
+    &.no-pad {
+      padding: 0;
+    }
+  }
+
+  .col {
+    flex: 1;
+  }
+
+  // loop for 12 columns <div class="col-i">
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      width: ($i * 100% / 12);
+    }
+  }
+}
+
+@include media-query($mobile) {
+  @for $i from 1 through 12 {
+    .col-#{$i}-xs {
+      width: ($i * 100% / 12);
+    }
+  }
+}
+
+@include media-query($small) {
+  @for $i from 1 through 12 {
+    .col-#{$i}-sm {
+      width: ($i * 100% / 12);
+    }
+  }
+}
+
+@include media-query($medium) {
+  @for $i from 1 through 12 {
+    .col-#{$i}-md {
+      width: ($i * 100% / 12);
+    }
+  }
+}
+
+/* Markup for grids
+
+
+Normal FW Grid 
+
+<div class="container">
+  <div class="row">
+    <cols>
+  </div>
+</div>
+
+
+That Smaller Grid we see a bit 
+
+<div class="container">
+  <div class="small-grid">
+    <div class="row">
+      <cols>
+    </div>
+  </div>
+</div>
+
+
+*/

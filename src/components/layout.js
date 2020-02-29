@@ -8,7 +8,9 @@ const Layout = props => {
     <div className={props.fullWidth ? layoutStyles.fullWidth : layoutStyles.container}>
       <div className={layoutStyles.content}>
         <Header />
-        <p> {props.children} </p>
+        <main>
+          <p> {props.children} </p>
+        </main>
       </div>
 
       <Footer />
