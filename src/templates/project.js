@@ -32,9 +32,12 @@ const Project = props => {
       <Head title={props.data.contentfulProject.projectTitle} />
       <section>
         <div className={`row ${projectStyle.row}`}>
-          <div className="col-7">
+          <div className={projectStyle.imageArea}>
+            <img src={props.data.contentfulProject.projectHeroImage.file.url} alt={props.data.contentfulProject.projectHeroImage.title} />
+          </div>
+
+          <div className={projectStyle.textArea}>
             <h1> {props.data.contentfulProject.projectTitle} </h1>
-            {/* <img src={props.data.contentfulProject.projectHeroImage.file.url} alt={props.data.contentfulProject.projectHeroImage.title} /> */}
             <p>{props.data.contentfulProject.projectDescription.childMarkdownRemark.excerpt}</p>
             <p> {props.data.contentfulProject.collaborationCredit}</p>
           </div>

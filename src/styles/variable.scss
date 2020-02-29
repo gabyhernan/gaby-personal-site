@@ -9,10 +9,10 @@ $xl-grid-width: 1450px;
 
 // Grid
 $grid-small: 575px;
-$grid-medium: 47.97em; // 767px
-$grid-large: 61.85em; // 990px/
-$grid-widescreen: 87.5em; // 1400px
-$grid-max-width: 73.75em; // 1180px
+$grid-medium: 767px; // 767px
+$grid-large: 990px; // 990px/
+$grid-widescreen: 1700px; // 1400px
+$grid-max-width: 1180; // 1180px
 $grid-gutter: 30px;
 
 // Breakpoints used with the media-query mixin

@@ -84,6 +84,14 @@ $gutter: $gap / 2;
   }
 }
 
+// @include media-query($widescreen) {
+//   @for $i from 1 through 12 {
+//     .col-#{$i}-lg {
+//       width: ($i * 100% / 12);
+//     }
+//   }
+// }
+
 /* Markup for grids
 
 

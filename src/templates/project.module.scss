@@ -1,16 +1,40 @@
+@import "../styles/index.scss";
 .row {
   align-items: center;
-  h1 {
-    font-family: "Lora", serif;
-    font-size: 3rem;
+
+  .image-area {
+    width: 60%;
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    @include media-query($medium-down) {
+      width: 50%;
+    }
   }
 
-  p {
-    font-family: "Poppins", sans-serif;
-  }
+  .text-area {
+    width: 40%;
+    h1 {
+      font-family: "Lora", serif;
+      font-size: 4rem;
+      transform: translate3d(-15%, -25px, 10px);
 
-  img {
-    height: 66vh;
-    object-fit: cover;
+      @include media-query($widescreen) {
+        font-size: 5rem;
+      }
+    }
+
+    p {
+      font-family: "Poppins", sans-serif;
+      text-align: end;
+      transform: translate(0%, 14%);
+      padding: 15px 5rem;
+    }
+
+    @include media-query($medium-down) {
+      width: 50%;
+    }
   }
 }
