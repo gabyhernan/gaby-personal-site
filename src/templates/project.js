@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Head from "../components/head"
+import projectStyle from "./project.module.scss"
 
 export const query = graphql`
   query($slug: String) {
@@ -28,14 +29,16 @@ export const query = graphql`
 const Project = props => {
   return (
     <Layout fullWidth={true}>
-      <div className="heroContainer"></div>
-      <Head title="to fill with project title here" />
-
+      <Head title={props.data.contentfulProject.projectTitle} />
       <section>
-        <h1> {props.data.contentfulProject.projectTitle} </h1>
-        <p>{props.data.contentfulProject.projectDescription.childMarkdownRemark.excerpt}</p>
-        <p> {props.data.contentfulProject.collaborationCredit}</p>
-        <img src={props.data.contentfulProject.projectHeroImage.file.url} alt={props.data.contentfulProject.projectHeroImage.title} />
+        <div className={`row ${projectStyle.row}`}>
+          <div className="col-7">
+            <h1> {props.data.contentfulProject.projectTitle} </h1>
+            <img src={props.data.contentfulProject.projectHeroImage.file.url} alt={props.data.contentfulProject.projectHeroImage.title} />
+            <p>{props.data.contentfulProject.projectDescription.childMarkdownRemark.excerpt}</p>
+            <p> {props.data.contentfulProject.collaborationCredit}</p>
+          </div>
+        </div>
       </section>
     </Layout>
   )
