@@ -22,7 +22,6 @@ const ProjectsPage = () => {
       <h1> Projects</h1>
       <div className="projectCard">
         {data.allContentfulProject.edges.map(edge => {
-          console.log(edge)
           return (
             <Link to={`/projects/${edge.node.slug}`}>
               <div className="imageHere"> </div>
