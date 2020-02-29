@@ -15,11 +15,18 @@ export const query = graphql`
         title
         file {
           url
+          fileName
         }
       }
       projectDescription {
         childMarkdownRemark {
           excerpt
+        }
+      }
+      projectDetailsPic {
+        title
+        file {
+          url
         }
       }
     }

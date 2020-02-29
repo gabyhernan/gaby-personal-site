@@ -29,8 +29,6 @@ const ProjectsPage = () => {
             </Link>
           )
         })}
-
-        <p> all of the projects should show up here </p>
       </div>
     </Layout>
   )
