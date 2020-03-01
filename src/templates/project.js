@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Head from "../components/head"
 import projectStyle from "./project.module.scss"
 
@@ -23,6 +22,13 @@ export const query = graphql`
           excerpt
         }
       }
+      pageOverviewPic {
+        title
+        file {
+          url
+        }
+      }
+
       projectDetailsPic {
         title
         file {
@@ -48,6 +54,12 @@ const Project = props => {
             <p>{props.data.contentfulProject.projectDescription.childMarkdownRemark.excerpt}</p>
             <p> {props.data.contentfulProject.collaborationCredit}</p>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <img src={props.data.contentfulProject.pageOverviewPic.file.url} alt={props.data.contentfulProject.pageOverviewPic.title} />
         </div>
       </section>
     </Layout>
