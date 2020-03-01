@@ -40,7 +40,13 @@ export const query = graphql`
 `
 
 const Project = props => {
-  const { projectTitle, projectHeroImage, projectDescription, collaborationCredit, pageOverviewPic } = props.data.contentfulProject
+  const {
+    projectTitle,
+    projectHeroImage,
+    projectDescription,
+    collaborationCredit,
+    pageOverviewPic,
+  } = props.data.contentfulProject
   return (
     <Layout fullWidth={true}>
       <Head title={projectTitle} />
@@ -58,11 +64,13 @@ const Project = props => {
         </div>
       </section>
 
-      <section>
-        <div className={projectStyle.fullWidthImg}>
-          <img src={pageOverviewPic.file.url} alt={pageOverviewPic.title} />
-        </div>
-      </section>
+      {pageOverviewPic && (
+        <section>
+          <div className={projectStyle.fullWidthImg}>
+            <img src={pageOverviewPic.file.url} alt={pageOverviewPic.title} />
+          </div>
+        </section>
+      )}
     </Layout>
   )
 }
