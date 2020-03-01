@@ -48,7 +48,7 @@ const Project = props => {
     pageOverviewPic,
   } = props.data.contentfulProject
   return (
-    <Layout fullWidth={true}>
+    <Layout>
       <Head title={projectTitle} />
       <section>
         <div className={`row ${projectStyle.row}`}>
