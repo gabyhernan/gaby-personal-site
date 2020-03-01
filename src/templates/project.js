@@ -40,26 +40,27 @@ export const query = graphql`
 `
 
 const Project = props => {
+  const { projectTitle, projectHeroImage, projectDescription, collaborationCredit, pageOverviewPic } = props.data.contentfulProject
   return (
     <Layout fullWidth={true}>
-      <Head title={props.data.contentfulProject.projectTitle} />
+      <Head title={projectTitle} />
       <section>
         <div className={`row ${projectStyle.row}`}>
           <div className={projectStyle.imageArea}>
-            <img src={props.data.contentfulProject.projectHeroImage.file.url} alt={props.data.contentfulProject.projectHeroImage.title} />
+            <img src={projectHeroImage.file.url} alt={projectHeroImage.title} />
           </div>
 
           <div className={projectStyle.textArea}>
-            <h1> {props.data.contentfulProject.projectTitle} </h1>
-            <p>{props.data.contentfulProject.projectDescription.childMarkdownRemark.excerpt}</p>
-            <p> {props.data.contentfulProject.collaborationCredit}</p>
+            <h1> {projectTitle} </h1>
+            <p>{projectDescription.childMarkdownRemark.excerpt}</p>
+            <p> {collaborationCredit}</p>
           </div>
         </div>
       </section>
 
       <section>
-        <div>
-          <img src={props.data.contentfulProject.pageOverviewPic.file.url} alt={props.data.contentfulProject.pageOverviewPic.title} />
+        <div className={projectStyle.fullWidthImg}>
+          <img src={pageOverviewPic.file.url} alt={pageOverviewPic.title} />
         </div>
       </section>
     </Layout>
