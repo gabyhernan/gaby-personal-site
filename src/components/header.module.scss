@@ -12,6 +12,7 @@
 }
 
 .nav-list {
+  font-family: Poppins, sans-serif;
   display: flex;
   list-style-type: none;
   margin: 0;
@@ -29,5 +30,6 @@
 }
 
 .active-nav-item {
-  color: blue;
+  color: #000000;
+  font-weight: 600;
 }

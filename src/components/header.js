@@ -31,11 +31,7 @@ const Header = () => {
           </li>
           <li>
             {" "}
-            <Link
-              className={headerStyles.navItem}
-              activeClassName={headerStyles.activeNavItem}
-              to="/about"
-            >
+            <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/about">
               {" "}
               About{" "}
             </Link>
@@ -53,7 +49,7 @@ const Header = () => {
           </li>
           <li>
             {" "}
-            <Link
+            {/* <Link
               className={headerStyles.navItem}
               activeClassName={headerStyles.activeNavItem}
               to="/blog"
@@ -71,7 +67,7 @@ const Header = () => {
             >
               {" "}
               Contact
-            </Link>{" "}
+            </Link>{" "} */}
           </li>
         </ul>
       </nav>
