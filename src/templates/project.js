@@ -46,7 +46,9 @@ const Project = props => {
     projectDescription,
     collaborationCredit,
     pageOverviewPic,
+    projectDetailsPic,
   } = props.data.contentfulProject
+  console.log(projectDetailsPic)
   return (
     <Layout>
       <Head title={projectTitle} />
@@ -71,6 +73,14 @@ const Project = props => {
           </div>
         </section>
       )}
+      {projectDetailsPic &&
+        projectDetailsPic.map(pic => {
+          if (pic.file.url.endsWith(".mp4")) {
+            return <video src={pic.file.url} loop autoplay></video>
+          } else {
+            return <img src={pic.file.url} />
+          }
+        })}
     </Layout>
   )
 }

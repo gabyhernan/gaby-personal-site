@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <Head title="About" />
-      <h1 className={aboutStyles.header}> Hello it's me</h1>
+      <h1 className={aboutStyles.header}> hi.</h1>
       <p>
         {" "}
         I love to create products that are easy to use, delightful to interact with, beautiful from a designer
@@ -24,21 +24,19 @@ const AboutPage = () => {
         memorable outcomes.
       </p>
 
-      <p>
-        Things I care about
-        <ul>
-          <li> UX & UI </li>
-          <li> Headless CMS</li>
-          <li> DRY patterns </li>
-          <li> ES6 </li>
-          <li> Modular Architectures </li>
-          <li> Accesibility </li>
-          <li> Responsive Web Design</li>
-          <li> Data Visualizations </li>
-          <li> JS animation libraries</li>
-          <li> Security </li>
-        </ul>
-      </p>
+      <h4> Things I care about</h4>
+      <ul>
+        <li> UX & UI </li>
+        <li> Headless CMS</li>
+        <li> DRY patterns </li>
+        <li> ES6 </li>
+        <li> Modular Architectures </li>
+        <li> Accesibility </li>
+        <li> Responsive Web Design</li>
+        <li> Data Visualizations </li>
+        <li> JS animation libraries</li>
+        <li> Security </li>
+      </ul>
     </Layout>
   )
 }

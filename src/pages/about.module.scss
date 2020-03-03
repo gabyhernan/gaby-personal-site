@@ -1,8 +1,16 @@
 .header {
-  font-family: Lora, serif;
+  font-family: Lora, sans-serif;
   font-size: 3rem;
+  color: #000000;
 }
 
 p {
   font-family: Poppins, sans-serif;
+}
+
+h4 {
+  margin-top: 2em;
+  font-family: Poppins, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }

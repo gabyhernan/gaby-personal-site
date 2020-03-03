@@ -1,6 +1,24 @@
 @import "../styles/index.scss";
+.header {
+  font-family: "Lora", serif;
+}
+
+.project-hyperlink {
+  color: #000000;
+  text-decoration: none;
+}
 .row {
   align-items: center;
+  margin: 5em auto;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    .text-area h1 {
+      transform: translate3d(15vw, 0, 10px);
+    }
+  }
 
   .image-area {
     width: 60%;

@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Head from "../components/head"
+import projectStyle from "../templates/project.module.scss"
 
 const ProjectsPage = () => {
   const data = useStaticQuery(graphql`
@@ -11,6 +12,18 @@ const ProjectsPage = () => {
           node {
             slug
             projectTitle
+            projectHeroImage {
+              title
+              file {
+                url
+                fileName
+              }
+            }
+            projectDescription {
+              childMarkdownRemark {
+                excerpt
+              }
+            }
           }
         }
       }
@@ -19,17 +32,22 @@ const ProjectsPage = () => {
   return (
     <Layout>
       <Head title="Projects" />
-      <h1> Projects</h1>
-      <div className="projectCard">
-        {data.allContentfulProject.edges.map(edge => {
-          return (
-            <Link to={`/projects/${edge.node.slug}`}>
-              <div className="imageHere"> </div>
-              <h2> {edge.node.projectTitle} </h2>
-            </Link>
-          )
-        })}
-      </div>
+      {data.allContentfulProject.edges.map(edge => {
+        return (
+          <div className={`row ${projectStyle.row}`}>
+            <div className={projectStyle.imageArea}>
+              <Link className={projectStyle.projectHyperlink} to={`/projects/${edge.node.slug}`}>
+                <img src={edge.node.projectHeroImage.file.url} alt={edge.node.projectHeroImage.title} />
+              </Link>
+            </div>
+
+            <div className={projectStyle.textArea}>
+              <h1> {edge.node.projectTitle} </h1>
+              <p>{edge.node.projectDescription.childMarkdownRemark.excerpt}</p>
+            </div>
+          </div>
+        )
+      })}
     </Layout>
   )
 }
