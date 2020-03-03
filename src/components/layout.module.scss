@@ -11,3 +11,9 @@
 .content {
   flex-grow: 1;
 }
+
+@media only screen and (max-width: 550px) {
+  .container {
+    max-width: 95vw;
+  }
+}

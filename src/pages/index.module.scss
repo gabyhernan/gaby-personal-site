@@ -1,9 +1,12 @@
+@import "../styles/index.scss";
 .header {
   font-size: 7vw;
   font-family: Lora, serif;
   color: black;
   font-weight: 300;
-  max-width: 85%;
+  @include media-query($small-down) {
+    font-size: 3.77em;
+  }
 }
 
 .sub-header {

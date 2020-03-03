@@ -43,7 +43,13 @@ const ProjectsPage = () => {
 
             <div className={projectStyle.textArea}>
               <h1> {edge.node.projectTitle} </h1>
-              <p>{edge.node.projectDescription.childMarkdownRemark.excerpt}</p>
+              <div className={projectStyle.cardText}>
+                <p>{edge.node.projectDescription.childMarkdownRemark.excerpt}</p>
+                <Link className={projectStyle.linkButton} to={`/projects/${edge.node.slug}`}>
+                  {" "}
+                  view work
+                </Link>
+              </div>
             </div>
           </div>
         )

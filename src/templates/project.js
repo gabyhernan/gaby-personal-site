@@ -9,6 +9,7 @@ export const query = graphql`
     contentfulProject(slug: { eq: $slug }) {
       slug
       projectTitle
+      projectSiteUrl
       collaborationCredit
       projectHeroImage {
         title
@@ -42,6 +43,7 @@ export const query = graphql`
 const Project = props => {
   const {
     projectTitle,
+    projectSiteUrl,
     projectHeroImage,
     projectDescription,
     collaborationCredit,
@@ -60,8 +62,16 @@ const Project = props => {
 
           <div className={projectStyle.textArea}>
             <h1> {projectTitle} </h1>
-            <p>{projectDescription.childMarkdownRemark.excerpt}</p>
-            <p> {collaborationCredit}</p>
+            <div className={projectStyle.cardText}>
+              <p>{projectDescription.childMarkdownRemark.excerpt}</p>
+              <p> {collaborationCredit}</p>
+              {projectSiteUrl && (
+                <a href={projectSiteUrl} target="_blank" rel="noopener">
+                  {" "}
+                  view website{" "}
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -75,11 +85,7 @@ const Project = props => {
       )}
       {projectDetailsPic &&
         projectDetailsPic.map(pic => {
-          if (pic.file.url.endsWith(".mp4")) {
-            return <video src={pic.file.url} loop autoplay></video>
-          } else {
-            return <img src={pic.file.url} />
-          }
+          return <img className="projectStyle.picOverview" src={pic.file.url} alt={pic.file.title} />
         })}
     </Layout>
   )
