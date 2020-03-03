@@ -85,7 +85,11 @@ const Project = props => {
       )}
       {projectDetailsPic &&
         projectDetailsPic.map(pic => {
-          return <img className="projectStyle.picOverview" src={pic.file.url} alt={pic.file.title} />
+          return (
+            <section className={projectStyle.picOverview}>
+              <img src={pic.file.url} alt={pic.file.title} />
+            </section>
+          )
         })}
     </Layout>
   )
