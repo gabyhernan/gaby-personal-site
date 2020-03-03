@@ -16,7 +16,7 @@
   &:nth-child(even) {
     flex-direction: row-reverse;
     .text-area h1 {
-      transform: translate3d(15vw, 0, 10px);
+      transform: translate3d(12vw, 0, 10px);
       @include media-query($small-down) {
         transform: none;
         text-align: right;
@@ -68,6 +68,7 @@
 
       a {
         text-decoration: none;
+        color: #000000;
         border-bottom: 1px solid #000000;
       }
       @include media-query($small-down) {
@@ -90,4 +91,9 @@
   padding: 3.5rem 0;
   display: flex;
   justify-content: center;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+  }
 }
