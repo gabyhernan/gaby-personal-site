@@ -93,4 +93,7 @@ section.pic-overview {
   display: flex;
   justify-content: center;
   width: 100%;
+  img {
+    align-self: center;
+  }
 }
