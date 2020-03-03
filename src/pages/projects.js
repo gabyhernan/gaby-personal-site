@@ -54,6 +54,11 @@ const ProjectsPage = () => {
           </div>
         )
       })}
+      <h3>
+        {" "}
+        Notable projects I've worked on but cannot legally share here include work at J.P. Morgan and an app
+        for the NYC Department of Education.{" "}
+      </h3>
     </Layout>
   )
 }
