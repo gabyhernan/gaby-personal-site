@@ -13,7 +13,7 @@ const AboutPage = () => {
         {" "}
         I love to create products that are easy to use, delightful to interact with, beautiful from a designer
         perspective and performant from a development perspective. Everything I do is approached with endless
-        curiousity and openess knowing there can be many right answers and no question is every silly. Always
+        curiousity and openess knowing there can be many right answers and no question is ever silly. Always
         eager to learn, my thirst for knowledge is as strong as my adoration for puppies.
       </p>
 
