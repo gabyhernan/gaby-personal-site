@@ -33,6 +33,8 @@ const AboutPage = () => {
         <li> Modular Architectures </li>
         <li> Accesibility </li>
         <li> Responsive Web Design</li>
+        <li> Graceful Degradation </li>
+        <li> Web Strategy </li>
         <li> Data Visualizations </li>
         <li> JS animation libraries</li>
         <li> Security </li>
