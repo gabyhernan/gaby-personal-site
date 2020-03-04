@@ -27,10 +27,10 @@ const AboutPage = () => {
       <h4> Things I care about</h4>
       <ul>
         <li> UX & UI </li>
-        <li> Headless CMS</li>
         <li> DRY patterns </li>
         <li> ES6 </li>
         <li> Modular Architectures </li>
+        <li> Headless CMS</li>
         <li> Accesibility </li>
         <li> Responsive Web Design</li>
         <li> Graceful Degradation </li>
